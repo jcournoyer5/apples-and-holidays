@@ -18,6 +18,9 @@ def second_supply_for_fourth_of_july(holiday_hash)
   #   }
   # }
   # return the second element in the 4th of July array
+  holiday_hash[:summer].each do |holiday, supplies|
+    supplies.push(supply)
+  end
 end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
@@ -72,7 +75,7 @@ end
 
 def all_holidays_with_bbq(holiday_hash)
   
-new_arr = holiday_hash[:summer].map do |season, holidays|
+new_arr = holiday_hash.map do |season, holidays|
 holidays.map do |holiday, supplies|
 if supplies.include?( "BBQ" )
 holiday
